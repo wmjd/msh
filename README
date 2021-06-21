@@ -6,9 +6,11 @@ line -> cmd
 cmd -> FILE ARG*
 |	EXIT
 
-A line is a command or a command piped to a line (recursively). A command is a file followed by any number of args, or it is the exit built-in. For a concrete example, this input line following the command prompt uses multiple pipes: login-name% ls -l | sort -fi | grep msh.c
+A line is a command or a command piped to a line (recursively). A command is a file followed by any number of args, or it is the exit built-in. For example, this input line following the command prompt uses multiple pipes: 
 
-The chief feature of this shell is the support for pipes. We recognize the UNIX philosophy of composing utility programs together by their input and output. Pipes can be used arbitrarily. Because bash allows pipes without whitespace separation, and we aim to conform, we have made the same design choice.
+login-name% ls -l | sort -fi | grep msh.c
+
+The chief feature of this shell is the support for UNIX pipes. Pipes can be used arbitrarily. Because bash allows pipes without whitespace separation, the same design choice has been made for msh.
 
 The main function works by printing a command prompt, waiting for a commandline, interpreting, printing output. These steps repeat by looping until the user enters "exit".
 
