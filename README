@@ -1,5 +1,5 @@
 
-This repository contains msh, a microshell developed as a school assignment for CS570 at SDSU. This microshell aims to conform to a subset of bash and supports UNIX style pipes as well as quoted strings. This is the rough BNF for the microshell:
+This repository contains msh, a microshell developed as a school assignment. This microshell aims to conform to a subset of bash and supports UNIX style pipes as well as quoted strings. This is the rough BNF for the microshell:
 
 line -> cmd
 |	cmd PIPE line
