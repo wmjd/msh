@@ -14,7 +14,7 @@ The chief feature of this shell is the support for UNIX pipes. Pipes can be used
 
 The main function works by printing a command prompt, waiting for a commandline, interpreting, printing output. These steps repeat by looping until the user enters "exit".
 
-The function readAndInterpret does most of the work. This function reads one character at a time into linebuf in a format that seperates tokens by null bytes so they can be treated as C strings. A second buffer named argv collects these C strings for execution. The execution of commands is interleaved in reading the line. When a pipe character or the end of the line is encountered, the command is executed immediately. This function is monolithic and not modular. If the shell implemented more features, it should be rewritten with greater abstractions to include other built in shell functions such as cd, setenv, printenv, etc.
+The function readAndInterpret does most of the work. This function reads one character at a time into linebuf in a format that seperates tokens by null bytes so they can be treated as C strings. A second buffer named argv collects these C strings for execution. The execution of commands is interleaved in reading the line. When a pipe character or the end of the line is encountered, the command is executed immediately. 
 
 
  
