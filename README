@@ -1,20 +1,2 @@
 
-This repository contains msh, a microshell developed as a school assignment. This microshell aims to conform to a subset of bash and supports UNIX style pipes as well as quoted strings. This is the rough BNF for the microshell:
-
-line -> cmd
-|	cmd PIPE line
-cmd -> FILE ARG*
-|	EXIT
-
-A line is a command or a command piped to a line (recursively). A command is a file followed by any number of args, or it is the exit built-in. For example, this input line following the command prompt uses multiple pipes: 
-
-login-name% ls -l | sort -fi | grep msh.c
-
-The chief feature of this shell is the support for UNIX pipes. Pipes can be used arbitrarily. Because bash allows pipes without whitespace separation, the same design choice has been made for msh.
-
-The main function works by printing a command prompt, waiting for a commandline, interpreting, printing output. These steps repeat by looping until the user enters "exit".
-
-The function readAndInterpret does most of the work. This function reads one character at a time into linebuf in a format that seperates tokens by null bytes so they can be treated as C strings. A second buffer named argv collects these C strings for execution. The execution of commands is interleaved in reading the line. When a pipe character or the end of the line is encountered, the command is executed immediately. 
-
-
- 
+This repository contains msh, a microshell developed as a school assignment. This microshell aims to conform to a subset of bash and supports UNIX style pipes as well as quoted strings.
